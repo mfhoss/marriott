@@ -1,0 +1,33 @@
+$ ssh -i "LabTestAWS.pem" ec2-user@ec2-34-227-162-161.compute-1.amazonaws.com
+sudo yum install yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum repolist -v
+yum list docker-ce --showduplicates | sort -r
+sudo yum --nobest install docker-ce
+docker version
+sudo systemctl enable --now docker
+systemctl is-active docker
+systemctl is-enabled docker
+systemctl start docker
+systemctl status docker
+docker run hello-world
+docker
+docker search ubuntu
+docker pull ubuntu
+docker images
+docker rmi ubuntu
+docker run ubuntu cat /etc/issue
+docker ps -l 
+docker start c629b7d70666
+docker stop dreamy_mccarthy
+docker ps
+docker run -it ubuntu bash
+exit
+docker kill <container id>
+docker pull jenkins/jenkins:latest
+docker run -p 8080:8080 -p 50000:50000 jenkins:latest
+ec2-34-227-162-161.compute-1.amazonaws.com:8080
+docker pull nginx
+sudo docker run -p 8080:80 -d nginx
+http://ec2-34-227-162-161.compute-1.amazonaws.com:8080/
+docker stop $(docker ps -a -q)
